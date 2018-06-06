@@ -16,7 +16,8 @@ module.exports = (wallaby) => ({
 
     compilers: {
         "**/*.ts?(x)": wallaby.compilers.babel({
-            babel: false,
+            babelrc: false,
+            babel: require("@babel/core"),
             presets: [
                 "@babel/preset-env",
                 "@babel/preset-typescript",
