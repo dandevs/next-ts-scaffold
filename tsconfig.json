@@ -1,0 +1,21 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "jsx": "preserve",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "lib": [
+            "dom",
+            "es2016"
+        ]
+    }
+}
