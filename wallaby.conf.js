@@ -11,6 +11,7 @@ module.exports = (wallaby) => ({
 
     env: {
         type: "browser",
+        kind: "chrome",
     },
 
     testFramework: "mocha",
@@ -32,7 +33,7 @@ module.exports = (wallaby) => ({
                 ["@babel/preset-stage-2", { decoratorsLegacy: true, loose: true }]
             ],
 
-            plugins: ["@babel/plugin-transform-runtime"]
+            plugins: ["@babel/plugin-transform-runtime"],
         }),
     },
 
