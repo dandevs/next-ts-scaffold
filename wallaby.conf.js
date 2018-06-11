@@ -1,29 +1,40 @@
+const wallabyWebpack = require("wallaby-webpack");
+
 module.exports = (wallaby) => ({
     files: [
-        "+(components|libs|pages)/**/*.ts?(x)"
+        { pattern: "+(components|libs|pages)/**/*.ts?(x)", load: false },
     ],
 
     tests: [
-        "tests/**/*.test.ts?(x)"
+        { pattern: "tests/**/*.test.ts?(x)", load: false },
     ],
 
     env: {
-        type: "node",
-        runner: "node"
+        type: "browser",
     },
 
-    testFramework: "jest",
+    testFramework: "mocha",
+    postprocessor: wallabyWebpack(),
 
     compilers: {
         "**/*.ts?(x)": wallaby.compilers.babel({
             babelrc: false,
             babel: require("@babel/core"),
             presets: [
-                "@babel/preset-env",
+                ["@babel/preset-env", {
+                    targets: {
+                        browsers: "last 2 versions",
+                        esmodules: false,
+                    },
+                }],
                 "@babel/preset-typescript",
                 "@babel/preset-react",
                 ["@babel/preset-stage-2", { decoratorsLegacy: true, loose: true }]
             ]
         })
+    },
+
+    setup: () => {
+        window.__moduleBundler.loadTests();
     },
 })
