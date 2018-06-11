@@ -30,8 +30,10 @@ module.exports = (wallaby) => ({
                 "@babel/preset-typescript",
                 "@babel/preset-react",
                 ["@babel/preset-stage-2", { decoratorsLegacy: true, loose: true }]
-            ]
-        })
+            ],
+
+            plugins: ["@babel/plugin-transform-runtime"]
+        }),
     },
 
     setup: () => {

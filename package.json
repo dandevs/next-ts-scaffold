@@ -3,6 +3,7 @@
     "dev": "next"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.49",
     "lodash": "^4.17.10",
     "mobx": "^4.3.1",
     "mobx-react": "^5.2.0",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
     "@babel/preset-react": "^7.0.0-beta.49",
     "@babel/preset-stage-2": "^7.0.0-beta.49",
